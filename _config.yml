@@ -1,0 +1,142 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole site, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing these this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: W22 Mentors
+tagline: Central hub for organizing CSW8 roles
+description: A repo with the roles and responsibilities
+author: YKK
+baseurl: '/w22-staff' # the subpath of your site, e.g. /blog
+url: 'https://ucsb-csw8.github.io' # the base hostname & protocol for your site, e.g. http://example.com
+exclude: ["Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
+
+# Custom variables for this term 
+course_website: "https://ucsb-csw8.github.io/w22/"
+drive_dir: "https://drive.google.com/drive/u/0/folders/1lMhpIAXWpNsiMBslIYy8fdfTvzFCzUv1"
+meeting_notes_doc: "https://docs.google.com/document/d/1Buel3lC6lQ_FM8hsJbMXCqXrxX9kl2Qvx5YqAWt2GE0/edit"
+reflections_dir: "https://drive.google.com/drive/u/0/folders/1Hdvm4J8wWGKdiwX6RKtAQEdNFaJKFPLe"
+weekly_review_doc: "https://docs.google.com/document/d/16yGDLJ5TdBCMzayggRru1GDu_NSJl0X44mXrN1gonjQ/edit"
+
+# DUE DATES
+reflections_release: "Thursday 1PM"
+quiz_regrade_close: "Monday 9AM"
+zybook_due: "Sunday 9PM"
+
+##################
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Footer last edited timestamp
+# https://pmarsceill.github.io/just-the-docs/docs/configuration/#footer-content
+last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
+last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
+# the “page last modified” data will only display if a page has a key called last_modified_date, formatted in some readable date format
+
+# Footer "Edit this page on GitHub" link text
+gh_edit_link: true # show or hide edit this page link
+gh_edit_link_text: "Edit this page on GitHub."
+gh_edit_repository: "https://github.com/ucsb-csw8/w22-staff" # the github URL for your repo
+gh_edit_branch: "main" # the branch that your docs is served from
+# gh_edit_source: docs # the source that your files originate from
+gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+
+# Google Analytics Tracking (optional)
+#ga_tracking: UA-5555555-55
+#ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true by default)
+
+# Theme settings
+remote_theme: pmarsceill/just-the-docs@v0.3.3
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+permalink: pretty
+aux_links:
+  CSW8-W22:
+    - 'https://ucsb-csw8.github.io/w22/'
+  zyBooks:
+    - 'https://learn.zybooks.com/zybook/UCSBCMPSCW8KharitonovaWinter2022'
+  Piazza:
+    - 'https://piazza.com/class/kxyw0ft3mjl78d'
+  Gauchospace:
+    - 'https://gauchospace.ucsb.edu/courses/course/view.php?id=1138'
+  Gradescope:
+    - 'https://www.gradescope.com/courses/345448'
+  Shared Drive:
+    - "https://drive.google.com/drive/u/0/folders/1lMhpIAXWpNsiMBslIYy8fdfTvzFCzUv1"
+aux_links_new_tab: true
+
+footer_content: 'Yekaterina Kharitonova and Team &copy; 2022 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>'
+
+# Collections for website data
+collections:
+  modules:
+  schedules:
+  # Define a collection named "resource", its documents reside in the "_resource" directory; add it to defaults below
+  roles:
+    permalink: "/:path/"
+    output: true
+  # Define a collection named "howto", its documents reside in the "_howto" directory; add it to defaults below
+  howto:
+    permalink: "/:path/"
+    output: true
+# Default layouts for each collection type
+defaults:
+  - scope:
+      path: ''
+      type: modules
+    values:
+      layout: module
+  - scope:
+      path: ''
+      type: schedules
+    values:
+      layout: schedule
+  - scope:
+      path: ''
+      type: roles
+    values:
+      layout: role
+  - scope:
+      path: ''
+      type: howto
+    values:
+      layout: howto
+
+###just_the_docs:
+### # Define which collections are used in just-the-docs
+### collections:
+###   # Reference the "resource" collection
+###   resource:
+###     # Give the collection a name
+###     name: Resource
+####     # Exclude the collection from the navigation
+####     # Supports true or false (default)
+###     nav_exclude: false
+####     # Exclude the collection from the search
+####     # Supports true or false (default)
+###     search_exclude: false
+
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
+
+plugins:
+  - jekyll-seo-tag
