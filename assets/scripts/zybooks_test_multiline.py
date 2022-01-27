@@ -1,10 +1,10 @@
 # (https://zybooks.zendesk.com/hc/en-us/articles/360018781373)
 # after downloading the zyBooks test
 # (use the XXX_with_answers document where
-# Correct answers marked with an asterisk (*)).
+# correct answers marked with an asterisk (*)).
 # Copy the questions and paste them into a plaintext doc.
 # Manually remove the heading, so that the first Q is on the first line.
-# then run this script
+# then run this script to
 # - remove the question numbers
 # - detect the correct answer and add it to the Gauchospace version
 # - convert the zyBook options to Gauchospace options
@@ -12,7 +12,7 @@
 # and correct the multi-line question to be on a single line
 # we recommend adding _A at the start of that question,
 # so that Gauchospace filters them all to the top, making it easier
-# to edit (and remove that _A tag).
+# to edit (and to remove that _A tag when re-formatting the question).
 
 def convert_zybooks_test(filepath):
     """
@@ -91,4 +91,3 @@ def convert_zybooks_test(filepath):
         
     testfile.close()
     resultfile.close()
-    
