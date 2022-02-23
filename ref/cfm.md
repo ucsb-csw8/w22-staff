@@ -73,10 +73,15 @@ For the form:
 Google forms allows you to save the CSV: go to the "Responses" tab, click on the green icon for the Google sheets.
 
 When you get a CSV list of the reflection responses, create a copy of it to upload to Gauchospace:
-* add a "Grade" column and give everyone who submitted the reflection full points (check Gauchospace gradebook to see what the max grade is set to).
-* replace "@ucsb.edu" with an empty string and rename "Email" to "Username"
+* add a "Grade" column and give everyone who submitted the reflection full points 
+    * check Gauchospace gradebook to see what the max grade is set to
+    * verify that all reflections have the same max score
+* in the "Email" column, replace "@ucsb.edu" with an empty string (you can optionally rename "Email" to "Username")
+    * Gauchospace is not consistent on which students have the `@umail` and which have `@ucsb` addresses, so forcing the spreadsheet to be one or the other will miss some students
 
 Upload the CSV to Gauchospace (see ["How to upload grades to Gauchospace"]({{ site.url }}{{ site.baseurl }}/howto)).
+* map the username to the NetID 
+* map the "Challenge level" responses to the Feedback for that week's reflection
 
 
 ### Process the feedback

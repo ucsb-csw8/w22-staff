@@ -151,6 +151,54 @@ Read over the labs to ensure that they follow the format that was outlined in [t
 
 Make sure that the code template provided for students is very clear and uses proper documentation.
 
+Lab skeleton:
+
+```
+# Learning objectives
+In this lab, you will practice
+* 
+
+# Instructions
+motivation for the lab and the necessary information/data/clarifications
+
+# Test your code
+If the input is:
+XXX
+
+the output is:
+YYY
+
+# Hints / Troubleshooting
+
+TBA
+
+---
+Code template -- this section is for the lab creators -- **remove the comments before publishing the lab**!
+
+Make sure that the code template provided for students is very clear and uses proper documentation.
+
+def func():
+    """
+    The function 
+    Returns
+    """
+    pass
+# Get from the lab instructions:
+# description of what needs to happen that can go into a doctring
+# function name
+# number of parameters and their types
+# print / return / both?
+
+if __name__ == "__main__":
+    pass
+# Get from the lab instructions:
+# what input is needed
+# how/where to call the function
+# what output is needed and in what format
+# one or two example input and the corresponding output
+
+
+```
 
 ## Gauchospace / Gradescope
 
