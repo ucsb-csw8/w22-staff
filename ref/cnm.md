@@ -34,7 +34,7 @@ Throughout the term, please help us update the notes below by modifying this pag
 * Create a channel for action items and @ mentors and their tasks for the week.
   * Send each action item as a different message so that mentors can react when they have finished.
 * Learn Markdown! 
-  * Here is a lecture notes (template) [https://docs.google.com/document/d/1FZhtSJunPkE3bSNcrCnDl2OzjpZ9P4LId3XPE2viKcU/edit?usp=sharing].
+  * Here is a lecture notes [template](https://docs.google.com/document/d/1FZhtSJunPkE3bSNcrCnDl2OzjpZ9P4LId3XPE2viKcU/edit?usp=sharing).
 * Feel free to create your own simple example code to explain a concept for a question.
 * Ask other mentors what are FAQs during their labs/office hours, and collect them for Prof K to answer in the next class. 
 
