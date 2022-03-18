@@ -13,3 +13,4 @@ Gemfile.lock
 _site/
 node_modules/
 vendor/
+.idea/*

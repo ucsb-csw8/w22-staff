@@ -9,18 +9,19 @@
 import csv
 
 #version = {1: 'A', 2: 'B', 3: 'C', 4: 'D', 5: 'E'}
-version = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E'}
+# version = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E'}
+version = {0: 'Blue', 1: 'Green', 2: 'Orange', 3: 'Red', 4: 'Yellow'}
 
-def check_existence(file_prefix, num_versions):
+def check_existence(file_prefix, num_versions, file_suffix):
     """ Looks for the existence of the CSV files
         named <file_prefix>_<version>__scores.csv"""
     for n in range(num_versions):
-        fname = "{}_{}__scores.csv".format(file_prefix, version[n])
+        fname = "{}_{}_{}_scores.csv".format(file_prefix, version[n], file_suffix)
         print("Reading", fname)
         file = open(fname, 'r')
         file.close()
         
-def remove_missing(file_prefix, num_versions):
+def remove_missing(file_prefix, num_versions, file_suffix):
     """ Looks for the CSV files named
         <file_prefix>_<version>__scores.csv
         Writes a new file (adds "no-missing" before .csv
@@ -28,7 +29,7 @@ def remove_missing(file_prefix, num_versions):
     """
     total = 0
     for n in range(num_versions):
-        fname = "{}_{}__scores.csv".format(file_prefix, version[n])
+        fname = "{}_{}_{}_scores.csv".format(file_prefix, version[n], file_suffix)
         outfile = fname.replace('.', "-no-missing.")
         print("Reading", fname)
         file = open(fname, 'r')
@@ -55,7 +56,7 @@ def remove_missing(file_prefix, num_versions):
         writer.close()
     print("Processed", total, "student records.")
 
-def assemble_scores(file_prefix, num_versions):
+def assemble_scores(file_prefix, num_versions, file_suffix):
     """ Looks for the CSV files named
         <file_prefix>_<version>__scores-no-missing.csv.
         Writes each row from that file and adds a new column
@@ -69,7 +70,7 @@ def assemble_scores(file_prefix, num_versions):
     total = 0
     first_file = True # use it to write the header only once
     for n in range(num_versions):
-        fname = "{}_{}__scores-no-missing.csv".format(file_prefix, version[n])     
+        fname = "{}_{}_{}_scores-no-missing.csv".format(file_prefix, version[n], file_suffix)
         print("Reading", fname)
         file = open(fname, 'r')
         first_row = True
@@ -97,7 +98,7 @@ def assemble_scores(file_prefix, num_versions):
     print("Processed", total, "student records.")
 
 
-def combine_scores(file_prefix, num_versions):
+def combine_scores(file_prefix, num_versions, file_suffix):
     """ Looks for the CSV files named
         <file_prefix>_<version>__scores-no-missing.csv.
         Writes each row from that file and adds a new column
@@ -112,7 +113,7 @@ def combine_scores(file_prefix, num_versions):
     total = 0
     first_file = True # use it to write the header only once
     for n in range(num_versions):
-        fname = "{}_{}__scores-no-missing.csv".format(file_prefix, version[n])     
+        fname = "{}_{}_{}_scores-no-missing.csv".format(file_prefix, version[n], file_suffix)
         print("Reading", fname)
         file_reader = open(fname, 'r')
         first_row = True
