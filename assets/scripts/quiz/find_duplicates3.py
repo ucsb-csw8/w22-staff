@@ -29,7 +29,7 @@ def remove_duplicate_records(infile):
                 print("Not a valid student SID")
                 print(row)
                 continue
-            score = float(row[4])
+            score = float(row[5])
             cur_version = row[-1]
             fname = row[0]
             lname = row[1]
@@ -45,15 +45,16 @@ def remove_duplicate_records(infile):
                 print(fname, lname, sid, score, cur_version)
                 print(data[sid]) # what we already have
                 stored_score = data[sid][1]
-                if stored_score > score and score < 2:
+                if stored_score > score:
                     print("{}: A higher score {} --> {}".format(sid, stored_score, score))
                     continue
-                #else:
+                else:
                 # Add the new version:score to the dictionary
-                data[sid][2][cur_version] = score
-                # Update the record to the new high score
-                data[sid] = (cur_version, score, data[sid][2])
-                print(data[sid])
+                    print("{} : upgrading score from {} --> {}".format(sid, stored_score, score))
+                    data[sid][2][cur_version] = score
+                    # Update the record to the new high score
+                    data[sid] = (cur_version, score, data[sid][2])
+                    print(data[sid])
 
     print("Writing", outfile)
     with open(outfile, 'w') as csvfile:
